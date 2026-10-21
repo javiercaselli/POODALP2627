@@ -1,0 +1,14 @@
+PYTHON Y PRIMEROS OBJETOS — ALUMNADO
+
+Requisitos: Python 3.10 o posterior y un editor. No se necesitan paquetes externos.
+Abre esta carpeta en tu editor. Cada eNN.py corresponde al ejercicio del cuaderno.
+Escribe tu código debajo del enunciado y ejecuta solo ese archivo.
+Desde una terminal, según tu instalación: python e01.py, python3 e01.py o py e01.py.
+No copies los símbolos >>> del intérprete a los archivos .py.
+Mantén modelos_inicio.py al lado de e05.py, e07.py y e11.py.
+Libro de modelos_inicio recibe solo titulo. A partir del ejercicio 12 diseñarás
+una clase propia con codigo y titulo para distinguir ejemplares.
+En los ejercicios posteriores copia tus clases ya resueltas en el archivo actual.
+Resuelve primero la tarea común. Las ampliaciones son opcionales.
+Los ejercicios 19 y 20 se reservan para cuando estén consolidados los anteriores.
+No ejecutes todos los archivos de una vez: algunos esperan entrada por teclado.
