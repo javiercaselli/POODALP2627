@@ -8,6 +8,7 @@ Ampliación: Añade la opción 4 para listar solo los disponibles.
 """
 from e17 import pedir_entero
 
+
 # Copia aquí tus clases de los ejercicios anteriores que se necesitan.
 # Clase Libro
 class Libro:
@@ -36,12 +37,12 @@ class Libro:
             estado = "disponible"
         else:
             estado = "prestado"
-        return f"{self.titulo}, {self.autor} - {self.fecha} [{estado}]"
+        return f"{self.codigo}|{self.titulo}, {self.autor} - {self.fecha} [{estado}]"
 
 # Clase biblioteca
 class Biblioteca:
     def __init__(self):
-        self.libros = []
+        self.libros:list[Libro] = []
 
     def buscar(self, codigo):
         for libro in self.libros:
@@ -71,6 +72,48 @@ class Biblioteca:
 
 
 # Escribe tu solución debajo.
+def listar_biblioteca(biblioteca:Biblioteca):
+    print("\nCatálogo completo de la biblioteca:")
+    print("-----------------------------------")
+    for libro in biblioteca.libros:
+         print(libro.resumen())
+
+
+def listar_biblioteca_disp(biblioteca:Biblioteca):
+    biblioteca_vacia = True
+    for libro in biblioteca.libros:
+        if (libro.disponible):
+            print(libro.resumen())
+            biblioteca_vacia = False
+    if (biblioteca_vacia):
+        print("En este momento todos los libros de la biblioteca están prestados.")
+
+
+def prestar_libro(biblioteca:Biblioteca):
+    codigo = input("\nIntroduzca el código del libro: ")
+    libro = biblioteca.buscar(codigo)
+    if (libro != None):
+        if (libro.prestar()):
+            print(f"El libro {libro.codigo} - {libro.titulo} ha sido prestado con éxito")
+        else:
+            print(f"El libro {libro.codigo} - {libro.titulo} no está disponible")
+    else:
+        print(f"No existe un libro con código '{codigo}' en esta biblioteca")
+            
+        
+def devolver_libro(biblioteca:Biblioteca):
+    codigo = input("\nIntroduzca el código del libro: ")
+    libro = biblioteca.buscar(codigo)
+    if (libro != None):
+        if (libro.devolver()):
+            print(f"El libro {libro.codigo} - {libro.titulo} ha sido devuelto con éxito")
+        else:
+            print(f"El libro {libro.codigo} - {libro.titulo} no está prestado en estos momentos")
+    else:
+        print(f"No existe un libro con código '{codigo}' en esta biblioteca")
+            
+        
+     
 if __name__ == "__main__":
      # Crea bibloteca
      biblioteca = Biblioteca()
@@ -82,8 +125,23 @@ if __name__ == "__main__":
      # Menú
      opcion = -1
      while (opcion != 0):
+          print("\n==========")
+          print("BIBLIOTECA")
+          print("==========")
           print("1. Listar")
           print("2. Prestar")
           print("3. Devolver")
+          print("4. Listar disponibles")
           print("0. Salir")
           opcion = pedir_entero("Elija una opción: ")
+          match opcion:
+                case 1:
+                    listar_biblioteca(biblioteca)
+                case 2:
+                    prestar_libro(biblioteca)
+                case 3:
+                    devolver_libro(biblioteca)
+                case 4:
+                    listar_biblioteca_disp(biblioteca)
+
+
