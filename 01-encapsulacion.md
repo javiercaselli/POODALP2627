@@ -6,7 +6,7 @@
 
 Al terminar podrás explicar a qué ejemplar se refiere `self`, distinguir el resultado de una operación del estado que deja y modificar la clase sin cambiar la forma en que el menú consulta la disponibilidad.
 
-Durante el taller ampliarás la misma clase para dar de alta libros desde un escáner. Para los experimentos de ciclo de vida usarás una clase auxiliar. Guarda tus predicciones antes de ejecutar cada experimento. Puedes consultar los apartados 2 a 4 del [manual de POO](manual-ra1-ra2.md).
+Durante el taller ampliarás la misma clase para dar de alta libros desde un escáner. Para los experimentos de ciclo de vida usarás una clase auxiliar. Guarda tus predicciones antes de ejecutar cada experimento. Puedes consultar los apartados 2 a 4 del [manual de POO](README.md).
 
 ## 1. Dos ejemplares
 
